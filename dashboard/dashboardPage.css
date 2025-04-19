@@ -18,6 +18,10 @@ body {
     height: 100vh;
 }
 
+.content {
+    margin-top: 20px;
+}
+
 .header {
     height: 13vh;
     width: 100%;
@@ -171,17 +175,37 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-bar,
-    .search-bar {
+    .header {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .nav-menu {
+        display: flex;
+    }
+    .nav-bar {
         display: none;
         flex-direction: column;
         width: 100%;
+        gap: 15px;
+        margin-top: 10px;
     }
-    .nav-bar.show,
-    .search-bar.show {
+    .nav-bar.active {
         display: flex;
     }
-    .nav-menu {
-        display: block;
+    .search-bar {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 15px;
+        margin-top: 10px;
+    }
+    .flex-content {
+        margin-top: 10px;
+        /* ensure space under nav */
     }
 }

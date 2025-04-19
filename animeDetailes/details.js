@@ -69,3 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '../dashboard/dashboardPage.html';
     });
 });
+
+function toggleBtn() {
+    const navBar = document.getElementById("navDropdown");
+
+    // Only toggle if in mobile view
+    if (window.innerWidth <= 768) {
+        navBar.classList.toggle("active");
+    }
+}
+
+// Optional: Close nav on window resize if back to desktop
+window.addEventListener("resize", () => {
+    const navBar = document.getElementById("navDropdown");
+    if (window.innerWidth > 768) {
+        navBar.classList.remove("active");
+    }
+});

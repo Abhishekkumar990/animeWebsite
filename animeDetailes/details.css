@@ -10,19 +10,32 @@ body {
     color: white;
 }
 
+.container {
+    padding-bottom: 40px;
+}
 
-/* Container and header for the details page */
+
+/* ===================== */
+
+
+/* Header & Navigation   */
+
+
+/* ===================== */
 
 .header {
-    height: 13vh;
+    height: 30vh;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 30px 25px;
+    padding: 20px 15px;
     align-items: center;
+    flex: 1;
 }
 
 .logo {
+    padding: 20px 15px;
     color: #ffffff;
     font-size: 24px;
     font-weight: bold;
@@ -34,10 +47,13 @@ body {
 
 .nav {
     display: flex;
-    cursor: pointer;
-    justify-content: space-evenly;
-    gap: 35px;
+    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 20px 15px;
 }
 
 .nav-menu {
@@ -58,26 +74,35 @@ body {
 
 .nav-bar {
     display: flex;
-    left: 0;
 }
 
 .nav-bar ul {
     list-style: none;
     display: flex;
-    gap: 55px;
+    gap: 40px;
     align-items: center;
+    padding-left: 0;
 }
 
 .nav-bar ul a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nav-bar ul a:hover {
-    font-size: 23px;
+    font-size: 21px;
     color: red;
 }
+
+
+/* ===================== */
+
+
+/* Search Bar            */
+
+
+/* ===================== */
 
 .search-bar {
     display: flex;
@@ -85,18 +110,20 @@ body {
     align-items: center;
     padding: 10px;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .search-input {
-    max-height: 30px;
+    height: 35px;
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    width: 200px;
 }
 
 .search-button {
-    padding: 6px 10px;
+    padding: 6px 12px;
     font-size: 16px;
     background-color: white;
     color: red;
@@ -112,27 +139,76 @@ body {
 }
 
 
-/* Styling for the anime details */
+/* ===================== */
+
+
+/* Anime Details Section */
+
+
+/* ===================== */
 
 .anime-detail {
+    margin-top: 20px;
+    /* Give breathing space below header */
     text-align: center;
+    padding: 20px;
 }
 
 .animeImage {
     width: 100%;
-    height: auto;
     max-width: 600px;
+    height: auto;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .anime-extra {
     margin-top: 20px;
+    padding: 0 10px;
 }
 
 .anime-extra h3 {
     margin-bottom: 10px;
+    font-size: 22px;
 }
 
 .anime-extra p {
     margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Mobile view only */
+
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .nav {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+    .nav-menu {
+        display: flex;
+    }
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .nav-bar.active {
+        display: flex;
+    }
+    .search-bar {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 15px;
+        margin-top: 10px;
+    }
 }
